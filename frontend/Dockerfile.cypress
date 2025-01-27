@@ -1,0 +1,16 @@
+FROM cypress/included:12.17.3
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application
+COPY . .
+
+# Command to run tests (can be overridden)
+CMD ["npx", "cypress", "run"]

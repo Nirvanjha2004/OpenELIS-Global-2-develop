@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  cypress:
+    build:
+      context: .
+      dockerfile: Dockerfile.cypress
+    volumes:
+      - ./cypress:/app/cypress
+      - ./cypress.config.js:/app/cypress.config.js
+    environment:
+      - CYPRESS_baseUrl=http://web:3000
+    depends_on:
+      - web
+  
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
