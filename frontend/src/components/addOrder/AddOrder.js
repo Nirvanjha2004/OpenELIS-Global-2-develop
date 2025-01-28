@@ -597,6 +597,7 @@ const AddOrder = (props) => {
               <AutoComplete
                 name="siteName"
                 id="siteName"
+                data-cy="siteName"
                 allowFreeText={
                   !(
                     configurationProperties.restrictFreeTextRefSiteEntry ===
@@ -703,6 +704,7 @@ const AddOrder = (props) => {
                 }
                 invalidText={error("sampleOrderItems.providerFirstName")}
                 id="requesterFirstName"
+                data-cy="requesterFirstName"
               />
             </Column>
 
@@ -725,6 +727,7 @@ const AddOrder = (props) => {
                 value={orderFormValues.sampleOrderItems.providerLastName}
                 onChange={handleRequesterLastName}
                 id="requesterLastName"
+                data-cy="requesterLastName"
                 invalid={
                   error("sampleOrderItems.providerLastName") ? true : false
                 }

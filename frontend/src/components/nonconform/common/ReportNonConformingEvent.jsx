@@ -506,6 +506,7 @@ export const ReportNonConformingEvent = () => {
             <CustomDatePicker
               key="startDate"
               id={"startDate"}
+              data-cy="startDate"
               labelText={<FormattedMessage id="nonconform.date.event" />}
               disallowFutureDate={true}
               autofillDate={true}
@@ -534,6 +535,7 @@ export const ReportNonConformingEvent = () => {
                 <FormattedMessage id="nonconform.label.reportingunit" />
               }
               id="reportingUnits"
+              data-cy="reportingUnit"
               value={nceForm.data.reportingUnit}
               onChange={(e) => {
                 setnceForm((prev) => ({
@@ -581,6 +583,7 @@ export const ReportNonConformingEvent = () => {
               }}
               rows={2}
               id="text-area-1"
+              data-cy="text-area-1"
               invalid={!!nceForm.errors.description}
               invalidText={nceForm.errors.description}
             />

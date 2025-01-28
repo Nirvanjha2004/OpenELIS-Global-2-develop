@@ -66,7 +66,11 @@ function PatientManagement() {
             </Button>
           </Column>
           <Column lg={4} md={3} sm={2}>
-            <Button kind={newPatientTab.kind} onClick={handleNewPatientTab}>
+            <Button
+              data-cy="newPatientButton"
+              kind={newPatientTab.kind}
+              onClick={handleNewPatientTab}
+            >
               <FormattedMessage
                 id="new.patient.label"
                 defaultMessage="New Patient"

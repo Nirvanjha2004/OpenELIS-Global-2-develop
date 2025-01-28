@@ -4,11 +4,12 @@ class Result {
   }
 
   selectUnitType(unitType) {
-    cy.get("#unitType").select(unitType);
+    //cy.get("#unitType").select(unitType);
+    cy.get("[data-cy='unitType']").select(unitType);
   }
 
   acceptSample(index = 0) {
-    cy.get(`.cds--checkbox-label`).eq(index).click();
+    cy.get(`[data-cy="checkbox-label"]`).eq(index).click();
   }
 
   acceptResult() {
@@ -20,7 +21,8 @@ class Result {
   }
 
   selectTestMethod(index = 0, method) {
-    cy.get(`#testMethod${index}`).select(method);
+    //cy.get(`#testMethod${index}`).select(method);
+    cy.get(`[data-cy="testMethod${index}"]`).select(method);
   }
 
   selectPatient() {
@@ -34,7 +36,8 @@ class Result {
   }
 
   searchByTest() {
-    cy.get(":nth-child(8) > #submit").click();
+    //cy.get(":nth-child(8) > #submit").click();
+    cy.get("[data-cy='searchByTest']").click();
   }
 
   validatePatientResult(patient) {
@@ -49,8 +52,10 @@ class Result {
   }
 
   referSample(index = 0, reason, institute) {
-    cy.get(`#referralReason${index}`).select(reason);
-    cy.get(`#institute${index}`).select(institute);
+    //cy.get(`#referralReason${index}`).select(reason);
+    cy.get(`[data-cy="referralReason${index}"]`).select(reason);
+    //cy.get(`#institute${index}`).select(institute);
+    cy.get(`[data-cy="institute${index}"]`).select(institute);
   }
 
   selectRefferedTest() {
@@ -60,16 +65,19 @@ class Result {
   }
 
   selectAnalysisStatus(status) {
-    cy.get("#analysisStatus").select(status);
+    //cy.get("#analysisStatus").select(status);
+    cy.get("[data-cy='analysisStatus']").select(status);
   }
   selectTestName(testName) {
-    cy.get("#testName").select(testName);
+    //cy.get("#testName").select(testName);
+    cy.get("[data-cy='testName']").select(testName);
   }
 
   printReport() {
-    cy.get(":nth-child(6) > :nth-child(2) > .cds--btn")
-      .should("be.visible")
-      .click();
+    // cy.get(":nth-child(6) > :nth-child(2) > .cds--btn")
+    //   .should("be.visible")
+    //   .click();
+    cy.get("[data-cy='referredOutTestsPrintButton']").should("be.visible").click();
   }
 
   setResultValue(index = 0, value) {

@@ -24,7 +24,7 @@ class OrderEntityPage {
     // cy.get(
     //   ".testPanels .cds--checkbox-wrapper:nth-child(5) .cds--checkbox",
     // ).check({ force: true });
-    cy.get("[data-cy^='panel-checkbox-']").first().click();
+    cy.get("[data-cy^='panel-checkbox-']").first().click({ force: true });
 
   }
   generateLabOrderNumber() {
@@ -38,7 +38,8 @@ class OrderEntityPage {
     cy.intercept("GET", `**/rest/SampleEntryAccessionNumberValidation**`).as(
       "accessionNoValidation",
     );
-    cy.get("[data-cy='labNo']").type(order, { delay: 300 });
+    //cy.getElement("#labNo").type(order, { delay: 300 });
+    cy.get("[data-cy='labNo']").should("exist").type(order, { delay: 300 });
 
     cy.wait("@accessionNoValidation").then((interception) => {
       const responseBody = interception.response.body;

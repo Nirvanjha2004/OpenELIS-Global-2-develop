@@ -21,7 +21,8 @@ class DashBoardPage {
       ).click();
       cy.wait(1000);
 
-      cy.get("#labNo")
+     // cy.get("#labNo")
+      cy.get("[data-cy='labNo']")
         .invoke("val")
         .then((labNoValue) => {
           if (labNoValue) {
@@ -32,10 +33,14 @@ class DashBoardPage {
           }
         });
 
-      cy.get("#siteName").type(order.siteName);
-      cy.get("#requesterFirstName").type(order.requester.firstName);
-      cy.get("#requesterLastName").type(order.requester.firstName);
-      cy.get(".forwardButton").should("be.visible").click();
+      //cy.get("#siteName").type(order.siteName);
+      cy.get("[data-cy='siteName']").type(order.siteName);
+      //cy.get("#requesterFirstName").type(order.requester.firstName);
+      cy.get("[data-cy='requesterFirstName']").type(order.requester.firstName);
+      //cy.get("#requesterLastName").type(order.requester.lastName);
+      cy.get("[data-cy='requesterLastName']").type(order.requester.lastName);
+      //cy.get(".forwardButton").should("be.visible").click();
+      cy.get("[data-cy='next-button']").should("be.visible").click();
     });
   }
 

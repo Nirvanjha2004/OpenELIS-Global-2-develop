@@ -510,6 +510,7 @@ function ReferredOutTests(props) {
                       id: "search.label.test",
                       defaultMessage: "Select Test Name",
                     })}
+                    data-cy="testName"
                     items={tests}
                     itemToString={(item) => (item ? item.value : "")}
                     onChange={(changes) => {
@@ -551,6 +552,7 @@ function ReferredOutTests(props) {
                     type="button"
                     disabled={searchByUnit}
                     onClick={handleReferredOutPatient}
+                    data-cy="searchByTest"
                   >
                     <FormattedMessage
                       id="referral.button.unitTestSearch"
@@ -623,6 +625,7 @@ function ReferredOutTests(props) {
           <Column lg={4} md={8} sm={4}>
             <Button
               disabled={selectedRowIds.length === 0}
+              data-cy="referredOutTestsPrintButton"
               kind="tertiary"
               type="button"
               onClick={handleReferredOutPatientPrint}

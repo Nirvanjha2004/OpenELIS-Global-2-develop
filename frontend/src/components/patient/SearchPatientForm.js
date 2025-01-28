@@ -349,6 +349,7 @@ function SearchPatientForm(props) {
                         defaultMessage: "Last Name",
                       })}
                       id={field.name}
+                      data-cy="lastName"
                     />
                   )}
                 </Field>
@@ -366,6 +367,7 @@ function SearchPatientForm(props) {
                         defaultMessage: "First Name",
                       })}
                       id={field.name}
+                      data-cy="firstName"
                     />
                   )}
                 </Field>
@@ -433,6 +435,7 @@ function SearchPatientForm(props) {
                   id="local_search"
                   kind="tertiary"
                   type="submit"
+                  data-cy="searchPatientButton"
                   onClick={() => setFieldValue("suppressExternalSearch", true)}
                 >
                   <FormattedMessage id="label.button.search" />
@@ -441,6 +444,7 @@ function SearchPatientForm(props) {
               <Column lg={4} md={4} sm={2}>
                 <Button
                   id="external_search"
+                  data-cy="externalSearchButton"
                   type="submit"
                   disabled={
                     configurationProperties.UseExternalPatientInfo === "false"

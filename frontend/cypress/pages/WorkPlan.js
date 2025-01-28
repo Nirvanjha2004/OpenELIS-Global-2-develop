@@ -12,11 +12,13 @@ class WorkPlan {
   }
 
   getTestTypeOrPanelSelector() {
-    return cy.get("select#select-1");
+    //return cy.get("select#select-1");
+    returncy.get("[data-cy='select-1']");
   }
 
   getPrintWorkPlanButton() {
-    return cy.get("button#print");
+    //return cy.get("button#print");
+    return cy.get("[data-cy='print']");
   }
   getWorkPlanResultsTable() {
     return cy.get(".cds--data-table.cds--data-table--sm");

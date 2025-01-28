@@ -597,6 +597,7 @@ export function SearchResultForm(props) {
                             }
                             name={field.name}
                             id={field.name}
+                            data-cy="analysisStatus"
                           >
                             <SelectItem
                               text={defaultAnalysisStatusLabel}
@@ -688,6 +689,7 @@ export function SearchResultForm(props) {
                 labelText={intl.formatMessage({ id: "search.label.testunit" })}
                 name="unitType"
                 id="unitType"
+                data-cy="unitType"
                 onChange={submitOnSelect}
               >
                 <SelectItem
@@ -1011,6 +1013,7 @@ export function SearchResults(props) {
             <Field name="forceTechApproval">
               {() => (
                 <Checkbox
+                  data-cy="checkbox-label"
                   id={"testResult" + row.id + ".forceTechApproval"}
                   name={"testResult[" + row.id + "].forceTechApproval"}
                   labelText=""
@@ -1217,6 +1220,7 @@ export function SearchResults(props) {
         <Column lg={2}>
           <Select
             id={"testMethod" + data.id}
+            data-cy={"testMethod" + data.id}
             name={"testResult[" + data.id + "].testMethod"}
             labelText={intl.formatMessage({ id: "referral.label.testmethod" })}
             onChange={(e) => handleChange(e, data.id)}
@@ -1249,6 +1253,7 @@ export function SearchResults(props) {
         <Column lg={3}>
           <Select
             id={"referralReason" + data.id}
+            data-cy={"referralReason" + data.id}
             name={"testResult[" + data.id + "].referralItem.referralReasonId"}
             // noLabel={true}
             labelText={intl.formatMessage({ id: "referral.label.reason" })}
@@ -1270,6 +1275,7 @@ export function SearchResults(props) {
         <Column lg={3}>
           <Select
             id={"institute" + data.id}
+            data-cy={"institute" + data.id}
             name={
               "testResult[" + data.id + "].referralItem.referredInstituteId"
             }

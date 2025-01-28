@@ -16,7 +16,7 @@ class ModifyOrderPage {
     //   )
     //   .should("be.visible")
     //   .click();
-    return cy.get("[data-cy='submit-button']").should("be.visible").click();
+    return cy.get('[data-cy="submit-button"]').should("be.visible").click();
   }
 
   clickNextButton() {
@@ -41,7 +41,7 @@ class ModifyOrderPage {
 
   }
   clickSearchPatientButton() {
-    return cy.get(":nth-child(12) > .cds--btn").click({ force: true });
+    return cy.get("[data-cy='searchPatientButton']").click({ force: true });
   }
 
   clickRespectivePatient() {

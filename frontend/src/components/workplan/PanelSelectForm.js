@@ -48,6 +48,7 @@ function PanelSelectForm(props) {
           <Select
             defaultValue="placeholder-item"
             id="select-1"
+            data-cy="select-1"
             invalidText={
               <FormattedMessage id="workplan.panel.selection.error.msg" />
             }

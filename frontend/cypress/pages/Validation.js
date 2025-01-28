@@ -12,7 +12,8 @@ class Validation {
   }
 
   enterLabNumberAndSearch(labNo) {
-    cy.get("#accessionNumber").type(labNo);
+    //cy.get("#accessionNumber").type(labNo);
+    cy.get("[data-cy='accessionNumber']").type(labNo);
     cy.get(".cds--sm\\:col-span-4.cds--lg\\:col-span-16 > #submit").click();
     cy.get("#cell-sampleInfo-0 > .sampleInfo").should("contain.text", labNo);
   }

@@ -279,7 +279,7 @@ const SearchForm = (props) => {
                 {(searchBy === "order" || searchBy === "range") && (
                   <>
                     <Column lg={6} md={8} sm={4}>
-                      <Field name="accessionNumber">
+                      <Field name="accessionNumber" data-cy="accessionNumber">
                         {({ field }) => (
                           <CustomLabNumberInput
                             placeholder={"Enter Lab No"}

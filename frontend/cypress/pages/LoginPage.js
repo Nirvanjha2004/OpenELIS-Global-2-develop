@@ -13,11 +13,13 @@ class LoginPage {
   }
 
   getUsernameElement() {
-    return cy.get("#loginName");
+    //return cy.getElement("#loginName");
+    return cy.getElement("[data-cy='loginName']");
   }
 
   getPasswordElement() {
-    return cy.get("#password");
+    //return cy.getElement("#password");
+    return cy.getElement("[data-cy='password']");
   }
 
   enterUsername(value) {
@@ -35,8 +37,9 @@ class LoginPage {
   }
 
   signIn() {
-    const button = cy.get(`[type='submit']`);
-    button.click();
+    // const button = cy.getElement(`[type='submit']`);
+    // button.click();
+    cy.get("[data-cy='submitButtonLoginForm']").should("be.visible").click();
   }
 
   acceptSelfAssignedCert() {

@@ -234,7 +234,7 @@ export const NCECorrectiveAction = () => {
       {notificationVisible && <AlertDialog />}
       <Grid fullWidth={true}>
         <Column lg={16}>
-          <h2>
+          <h2 data-cy="nonconformCorrectiveTitle">
             <FormattedMessage id={`nonconform.corrective.title`} />
           </h2>
         </Column>
@@ -575,6 +575,7 @@ export const NCECorrectiveAction = () => {
                 <CustomDatePicker
                   key="tdiscussionDate"
                   id={"tdiscussionDate"}
+                  data-cy="discussionDate"
                   labelText={
                     <FormattedMessage id="nonconform.date.discussion.nce" />
                   }
@@ -636,6 +637,7 @@ export const NCECorrectiveAction = () => {
                   onChange={handleCorrectiveActionChange}
                   rows={1}
                   id="text-area-corrective"
+                  data-cy="proposedCorrectiveAction"
                 />
               </Column>
 
@@ -653,6 +655,7 @@ export const NCECorrectiveAction = () => {
                 <CustomDatePicker
                   key="dateCompleted"
                   id={"dateCompleted"}
+                  data-cy="dateCompleted"
                   labelText=""
                   autofillDate={true}
                   value={formData[`dateCompleted`] ?? undefined}
@@ -830,6 +833,7 @@ export const NCECorrectiveAction = () => {
                 <CustomDatePicker
                   key="dateCompleted-0"
                   id={"dateCompleted-0"}
+                  data-cy="dateCompleted0"
                   labelText={
                     <FormattedMessage id="nonconform.date.completed" />
                   }

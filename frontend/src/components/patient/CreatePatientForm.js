@@ -593,11 +593,13 @@ function CreatePatientForm(props) {
                     >
                       <RadioButton
                         id="radio-1"
+                        data-cy="maleGenderRadioButton"
                         labelText={intl.formatMessage({ id: "patient.male" })}
                         value="M"
                       />
                       <RadioButton
                         id="radio-2"
+                        data-cy="femaleGenderRadioButton"
                         labelText={intl.formatMessage({ id: "patient.female" })}
                         value="F"
                       />
@@ -1041,7 +1043,12 @@ function CreatePatientForm(props) {
               {props.showActionsButton && (
                 <>
                   <Column lg={4} md={4} sm={4}>
-                    <Button type="submit" id="submit" disabled={isSubmitting}>
+                    <Button
+                      type="submit"
+                      id="submit"
+                      data-cy="saveButtonPatientForm"
+                      disabled={isSubmitting}
+                    >
                       <FormattedMessage id="label.button.save" />
                     </Button>
                   </Column>

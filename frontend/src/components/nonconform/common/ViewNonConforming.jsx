@@ -263,7 +263,7 @@ export const ViewNonConformingEvent = () => {
       {notificationVisible === true ? <AlertDialog /> : ""}
       <Grid fullWidth={true}>
         <Column lg={16}>
-          <h2>
+          <h2 data-cy="viewNonConformHeading">
             <FormattedMessage id={`nonconform.view.report`} />
           </h2>
         </Column>
@@ -273,6 +273,7 @@ export const ViewNonConformingEvent = () => {
               <Column lg={4} md={8}>
                 <Select
                   id="type"
+                  data-cy="searchBy"
                   labelText={intl.formatMessage({
                     id: "label.form.searchby",
                   })}
@@ -307,6 +308,7 @@ export const ViewNonConformingEvent = () => {
                     });
                   }}
                   id={`field.name`}
+                  data-cy="searchValue"
                 />
               </Column>
               <Column lg={16}>
@@ -522,6 +524,7 @@ export const ViewNonConformingEvent = () => {
             <Select
               labelText={<FormattedMessage id="nonconform.view.nce.category" />}
               id="nceCategory"
+              data-cy="nceCategory"
               value={formData.nceCategory}
               onChange={(e) => {
                 setFormData({
@@ -544,6 +547,7 @@ export const ViewNonConformingEvent = () => {
             <Select
               labelText={<FormattedMessage id="nonconform.view.nce.type" />}
               id="nceType"
+              data-cy="nceType"
               value={formData.nceType}
               onChange={(e) => {
                 setFormData({
@@ -573,6 +577,7 @@ export const ViewNonConformingEvent = () => {
                 <FormattedMessage id="nonconform.view.severe.consequences" />
               }
               id="consequences"
+              data-cy="consequences"
               value={formData.consequences}
               onChange={(e) => {
                 setFormData({
@@ -596,6 +601,7 @@ export const ViewNonConformingEvent = () => {
                 <FormattedMessage id="nonconform.view.nce.likely.occur" />
               }
               id="recurrence"
+              data-cy="recurrence"
               value={formData.recurrence}
               onChange={(e) => {
                 setFormData({
@@ -623,6 +629,7 @@ export const ViewNonConformingEvent = () => {
                 <FormattedMessage id="nonconform.view.lab.component" />
               }
               id="labComponent"
+              data-cy="labComponent"
               value={formData.labComponent}
               onChange={(e) => {
                 setFormData({
@@ -658,6 +665,7 @@ export const ViewNonConformingEvent = () => {
               invalidText={<FormattedMessage id="text.length.max" />}
               rows={2}
               id="text-area-10"
+              data-cy="text-area-10"
             />
           </Column>
 
@@ -675,9 +683,10 @@ export const ViewNonConformingEvent = () => {
               }}
               rows={2}
               id="text-area-3"
+              data-cy="text-area-3"
               invalid={formData.controlAction?.length > 200}
               invalidText={<FormattedMessage id="text.length.max" />}
-            />
+            />  
           </Column>
 
           <Column lg={8} md={4} sm={4}>
@@ -692,6 +701,7 @@ export const ViewNonConformingEvent = () => {
               }}
               rows={2}
               id="text-area-2"
+              data-cy="text-area-2"
               invalid={formData.comments?.length > 200}
               invalidText={<FormattedMessage id="text.length.max" />}
             />

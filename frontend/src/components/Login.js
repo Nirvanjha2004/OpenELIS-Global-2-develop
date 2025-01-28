@@ -192,6 +192,7 @@ function Login(props) {
                         <>
                           <TextInput
                             id="loginName"
+                            data-cy="loginName"
                             invalidText={props.intl.formatMessage({
                               id: "login.msg.username.missing",
                             })}
@@ -207,6 +208,7 @@ function Login(props) {
                           />
                           <TextInput.PasswordInput
                             id="password"
+                            data-cy="password"
                             invalidText={props.intl.formatMessage({
                               id: "login.msg.password.missing",
                             })}
@@ -218,7 +220,11 @@ function Login(props) {
                               id: "login.msg.password",
                             })}
                           />
-                          <Button type="submit" disabled={!isValid}>
+                          <Button
+                            type="submit"
+                            data-cy="submitButtonLoginForm"
+                            disabled={!isValid}
+                          >
                             <FormattedMessage id="label.button.login" />
                             <Loading
                               small={true}

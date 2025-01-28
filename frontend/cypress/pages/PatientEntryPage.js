@@ -25,7 +25,7 @@ class PatientEntryPage {
   }
 
   clickNewPatientTab() {
-    cy.get(":nth-child(1) > :nth-child(2) > .cds--btn").click();
+    cy.get("[data-cy='newPatientButton']").should("exist").click();
   }
 
   enterPatientInfo(
@@ -41,33 +41,40 @@ class PatientEntryPage {
     cy.enterText(this.firstNameSelector, firstName);
     cy.enterText(this.dateOfBirth, dateOfBirth);
     this.getMaleGenderRadioButton().click();
-    cy.getElement("#submit").click();
+    //cy.getElement("#submit").click();
+    cy.get("[data-cy='saveButtonPatientForm']").click();
   }
 
   clickSavePatientButton() {
-    this.getSubmitButton().click();
+    // this.getSubmitButton().click();
+    cy.get("[data-cy='saveButtonPatientForm']").click();
   }
 
   getMaleGenderRadioButton() {
-    return cy.getElement(
-      ":nth-child(2) > .cds--radio-button__label > .cds--radio-button__appearance",
-    );
+    // return cy.getElement(
+    //   ":nth-child(2) > .cds--radio-button__label > .cds--radio-button__appearance",
+    // );
+    return cy.get("[data-cy='maleGenderRadioButton']");
   }
 
   clickSearchPatientButton() {
-    cy.getElement("#local_search").click();
+    //cy.getElement("#local_search").click();
+    cy.get("[data-cy='searchPatientButton']").click();  
   }
 
   getExternalSearchButton() {
-    cy.get("#external_search").should("be.disabled");
+    //cy.get("#external_search").should("be.disabled");
+    return cy.get("[data-cy='externalSearchButton']").should("be.disabled");
   }
 
   getLastName() {
-    return cy.getElement(this.lastNameSelector);
+    //return cy.getElement(this.lastNameSelector);
+    return cy.get("[data-cy='lastName']");
   }
 
   getFirstName() {
-    return cy.getElement(this.firstNameSelector);
+    //return cy.getElement(this.firstNameSelector);
+    return cy.get("[data-cy='firstName']");
   }
   searchPatientByFirstNameOnly(firstName) {
     cy.enterText(this.firstNameSelector, firstName);
@@ -80,9 +87,10 @@ class PatientEntryPage {
   searchPatientByDateOfBirth(dateOfBirth) {
     cy.enterText(this.dateOfBirth, dateOfBirth);
   }
-  getSubmitButton() {
-    return cy.getElement(this.savePatientBtn);
-  }
+  // getSubmitButton() {
+  //   //return cy.getElement(this.savePatientBtn);
+  //   //return cy.get("[data-cy='saveButtonPatientForm']");
+  // }
 
   searchPatientByFirstAndLastName(firstName, lastName) {
     cy.enterText(this.firstNameSelector, firstName);
