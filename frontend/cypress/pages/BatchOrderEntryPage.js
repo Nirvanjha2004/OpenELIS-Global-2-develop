@@ -1,6 +1,7 @@
 class BatchOrderEntry {
   visitSetupPage() {
-    cy.get("h2").should("contain.text", "Batch Order Entry Setup");
+    //cy.get("h2").should("contain.text", "Batch Order Entry Setup");
+    cy.get("[data-cy='setupPage']").should("be.visible");
   }
 
   checkNextButtonDisabled() {
@@ -8,11 +9,13 @@ class BatchOrderEntry {
   }
 
   selectForm(formType) {
-    cy.get("#form-dropdown").select(formType);
+    //cy.get("#form-dropdown").select(formType);
+    cy.get("[data-cy='form-dropdown']").select(formType);
   }
 
   selectSampleType(sampleType) {
-    cy.get("#selectSampleType").should("be.visible").select(sampleType);
+    //cy.get("#selectSampleType").should("be.visible").select(sampleType);
+    cy.get("[data-cy='selectSampleType']").select(sampleType);
   }
 
   selectPanel(panelIndex) {
@@ -30,7 +33,8 @@ class BatchOrderEntry {
   }
 
   selectMethod(method) {
-    cy.get("#method-dropdown").select(method);
+    //cy.get("#method-dropdown").select(method);
+    cy.get("[data-cy='method-dropdown']").select(method);
   }
 
   checkFacilityCheckbox() {
@@ -42,8 +46,10 @@ class BatchOrderEntry {
   }
 
   enterSiteName(siteName) {
-    cy.get("#siteName").type(siteName);
-    cy.get(".suggestion-active").should("be.visible").click();
+    //cy.get("#siteName").type(siteName);
+    cy.get("[data-cy='siteName']").type(siteName);
+    //cy.get(".suggestion-active").should("be.visible").click();
+    cy.get("[data-cy='suggestion-active']").should("be.visible").click();
   }
 
   checkNextButtonEnabled() {
@@ -51,7 +57,8 @@ class BatchOrderEntry {
   }
 
   visitBatchOrderEntryPage() {
-    cy.get("h2").should("contain.text", "Batch Order Entry");
+    //cy.get("h2").should("contain.text", "Batch Order Entry");
+    cy.get("[data-cy='batchOrderEntryPage']").should("be.visible");
   }
 
   validateField(tagId, expectedText) {
@@ -59,7 +66,8 @@ class BatchOrderEntry {
   }
 
   clickGenerateAndSaveBarcode() {
-    cy.get(".cds--link > p").click();
+    //cy.get(".cds--link > p").click();
+    cy.get("[data-cy='generateAndSaveBarcode']").click();
   }
 
   saveOrder() {

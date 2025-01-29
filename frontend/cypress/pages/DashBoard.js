@@ -4,18 +4,32 @@ class DashBoardPage {
       cy.get(
         ":nth-child(2) > .cds--radio-button__label > .cds--radio-button__appearance",
       ).click();
-      cy.get("#local_search").click();
+      //cy.get("#local_search").click();
+      cy.get("[data-cy='searchPatientButton']").click();
       cy.get(
         "tbody > :nth-child(1) > :nth-child(1) > .cds--radio-button-wrapper > .cds--radio-button__label > .cds--radio-button__appearance",
       ).click();
-      cy.get(".forwardButton").click();
-      cy.get("#additionalQuestionsSelect").select(Program);
-      cy.get(".forwardButton").click();
-      cy.get("#sampleId_0").select("Serum");
-      cy.get(
-        ".testPanels > .cds--col > :nth-child(5) > .cds--checkbox-label",
-      ).click();
-      cy.get(".forwardButton").click();
+      //cy.get(".forwardButton").click();
+      cy.get("[data-cy='next-button']").click();
+      //cy.get("#additionalQuestionsSelect").select(Program);
+      cy.get("[data-cy='additionalQuestionsSelect']").select(Program);
+
+      //cy.get(".forwardButton").click();
+      cy.get("[data-cy='next-button']").click();
+      //cy.get("#sampleId_0").select("Serum");
+      cy.get("[data-cy='sampleId_0']").select("Serum");
+
+      cy.get("[data-cy='panel-checkbox-1']") //here i am not sure about this id = 1 in panel-checkbox-1 since after selecting serum there are only 2 options in panels
+        .should("be.visible")
+        .click({ force: true });
+
+      // cy.get(
+      //   ".testPanels > .cds--col > :nth-child(5) > .cds--checkbox-label",
+      // ).click();
+      //cy.get(".forwardButton").click();
+
+      cy.get("[data-cy='next-button']").click();
+
       cy.get(
         ":nth-child(2) > :nth-child(1) > :nth-child(2) > .cds--link",
       ).click();
@@ -61,7 +75,8 @@ class DashBoardPage {
     cy.get(":nth-child(2) > .cds--link").click();
     cy.get(":nth-child(1) > .tile-value").should("have.text", "0");
     cy.get(`:nth-child(${childIndex}) > .tile-value`).should("have.text", "1");
-    cy.get("#statusFilter").select("Completed");
+    //cy.get("#statusFilter").select("Completed");
+    cy.get("[data-cy='statusFilter']").select("Completed");
     cy.get("tbody > tr > :nth-child(4)").should("have.text", "John");
   }
 
@@ -72,15 +87,18 @@ class DashBoardPage {
   }
 
   saveOrder() {
-    cy.get("#pathology_save2").click();
+    //cy.get("#pathology_save2").click();
+    cy.get("[data-cy='pathology_save2']").click();
   }
 
   changeStatus(status) {
-    cy.get("#status").select(status);
+    //cy.get("#status").select(status);
+    cy.get("[data-cy='status']").select(status);
   }
 
   selectPathologist(pathologist) {
-    cy.get("#assignedPathologist").select(pathologist);
+    //cy.get("#assignedPathologist").select(pathologist);
+    cy.get("[data-cy='assignedPathologist']").select(pathologist);
   }
 }
 

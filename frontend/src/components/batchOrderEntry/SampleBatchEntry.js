@@ -220,6 +220,7 @@ const SampleBatchEntry = (props) => {
                   <FormattedMessage
                     id="order.entry.setup.batch"
                     defaultMessage="Batch Order Entry"
+                    data-cy="batchOrderEntryPage"
                   />
                 </Heading>
               </Section>
@@ -363,6 +364,7 @@ const SampleBatchEntry = (props) => {
                         setGenerateSaveButtonDisabled(true);
                       }}
                       disabled={generateSaveButtonDisabled}
+                      data-cy = "generateAndSaveBarcode"
                     >
                       <p>
                         <FormattedMessage id="order.generate.barcode" />

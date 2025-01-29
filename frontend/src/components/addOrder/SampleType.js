@@ -454,6 +454,7 @@ const SampleType = (props) => {
         <Select
           className="selectSampleType"
           id={"sampleId_" + index}
+          data-cy={"sampleId_" + index}
           ref={sampleTypesRef}
           value={
             props.sample.sampleTypeId === "" ? "" : props.sample.sampleTypeId

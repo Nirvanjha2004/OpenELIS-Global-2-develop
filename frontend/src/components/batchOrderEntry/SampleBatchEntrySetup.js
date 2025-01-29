@@ -364,6 +364,7 @@ const SampleBatchEntrySetup = () => {
                       <FormattedMessage
                         id="order.entry.setup"
                         defaultMessage="Batch Order Entry Setup"
+                        data-cy="setupPage"
                       />
                     </Heading>
                   </Section>
@@ -456,6 +457,7 @@ const SampleBatchEntrySetup = () => {
                   <Column lg={10} md={6} sm={4}>
                     <Select
                       id="form-dropdown"
+                      data-cy="form-dropdown"
                       labelText={
                         <>
                           <FormattedMessage id="order.form.label" />
@@ -622,6 +624,7 @@ const SampleBatchEntrySetup = () => {
                     <Select
                       className="inputText"
                       id="method-dropdown"
+                      data-cy="method-dropdown"
                       labelText={
                         <FormattedMessage id="referral.label.testmethod" />
                       }
@@ -682,6 +685,7 @@ const SampleBatchEntrySetup = () => {
                     <AutoComplete
                       name="siteName"
                       id="siteName"
+                      data-cy="siteName"
                       allowFreeText={
                         !(
                           configurationProperties.restrictFreeTextRefSiteEntry ===

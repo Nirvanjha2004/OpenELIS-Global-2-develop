@@ -333,6 +333,7 @@ function PathologyDashboard() {
               <Select
                 id="statusFilter"
                 name="statusFilter"
+                data-cy="statusFilter"
                 labelText={intl.formatMessage({ id: "label.filters.status" })}
                 defaultValue="placeholder"
                 value={

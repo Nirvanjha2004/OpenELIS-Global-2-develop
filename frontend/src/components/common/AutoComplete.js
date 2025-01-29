@@ -100,6 +100,7 @@ function AutoComplete(props) {
                 <li
                   className={className}
                   key={index}
+                  data-cy={index === activeSuggestion ? "suggestion-active" : null}
                   onClick={(e) => onClick(e, suggestion.id, suggestion)}
                 >
                   {suggestion.value}

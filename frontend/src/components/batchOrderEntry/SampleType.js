@@ -162,6 +162,7 @@ const SampleType = ({ updateFormValues }) => {
             <Select
               id="selectSampleType"
               className="selectSampleType"
+              data-cy="selectSampleType"
               labelText="Sample Type"
               onChange={handleFetchSampleTypeTests}
             >

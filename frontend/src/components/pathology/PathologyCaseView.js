@@ -396,6 +396,7 @@ function PathologyCaseView() {
         <Column lg={4} md={2} sm={2}>
           <Select
             id="status"
+            data-cy="status"
             name="status"
             labelText={intl.formatMessage({ id: "label.button.select.status" })}
             value={pathologySampleInfo.status}
@@ -443,6 +444,7 @@ function PathologyCaseView() {
           <Select
             id="assignedPathologist"
             name="assignedPathologist"
+            data-cy="assignedPathologist"
             labelText={
               <FormattedMessage id="label.button.select.pathologist" />
             }
@@ -1274,6 +1276,7 @@ function PathologyCaseView() {
         <Column lg={16}>
           <Button
             id="pathology_save2"
+            data-cy="pathology_save2"
             disabled={isSubmitting}
             onClick={(e) => {
               e.preventDefault();
